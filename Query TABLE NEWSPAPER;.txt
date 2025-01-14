@@ -1,0 +1,355 @@
+//Delete TABLE NEWSPAPER;
+
+SQL> drop table newspaper;  
+
+Table dropped. 
+
+// create table
+
+SQL> create table NEWSPAPER ( 
+  2  Feature VARCHAR2(15) not null,
+  3  Section CHAR(1),
+  4  Page NUMBER
+  5  );  
+
+Table created.
+
+SQL> select Feature, Section, Page from NEWSPAPER;
+
+no rows selected
+
+SQL> describe NEWSPAPER
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ FEATURE                                   NOT NULL VARCHAR2(15)
+ SECTION                                            CHAR(1)
+ PAGE                                               NUMBER
+
+
+//Insert Data
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('National News', 'A', 1); 
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Sports', 'D', 1);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Editorials', 'A', 12);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Business', 'E', 1);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Weather', 'C', 2);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Television', 'B', 7);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Births', 'F', 7);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Classified', 'F', 8);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Modern Life', 'B', 1);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Comics', 'C', 4);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Movies', 'B', 4);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Bridge', 'B', 2);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Obituaries', 'F', 6);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Doctor Is In', 'F', 6);
+
+1 row created.
+
+//save changes in database
+
+SQL> commit;
+
+Commit complete.
+
+
+//select query
+
+SQL> select *from newspaper;
+
+FEATURE         S       PAGE
+--------------- - ----------
+National News   A          1
+Sports          D          1
+Editorials      A         12
+Business        E          1
+Weather         C          2
+Television      B          7
+Births          F          7
+Classified      F          8
+Modern Life     B          1
+Comics          C          4
+Movies          B          4
+
+FEATURE         S       PAGE
+--------------- - ----------
+Bridge          B          2
+Obituaries      F          6
+Doctor Is In    F          6
+
+14 rows selected.
+
+
+
+SQL> set feedback off;
+SQL> select *from newspaper;
+
+FEATURE         S       PAGE
+--------------- - ----------
+National News   A          1
+Sports          D          1
+Editorials      A         12
+Business        E          1
+Weather         C          2
+Television      B          7
+Births          F          7
+Classified      F          8
+Modern Life     B          1
+Comics          C          4
+Movies          B          4
+
+FEATURE         S       PAGE
+--------------- - ----------
+Bridge          B          2
+Obituaries      F          6
+Doctor Is In    F          6
+
+//describe table
+
+SQL> describe newspaper
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ FEATURE                                   NOT NULL VARCHAR2(15)
+ SECTION                                            CHAR(1)
+ PAGE                                               NUMBER
+
+
+//Conditional Select with WHERE Clause
+
+SQL> select Feature, Section, Page from NEWSPAPER
+  2  where Section = 'F';
+
+FEATURE         S       PAGE
+--------------- - ----------
+Births          F          7
+Classified      F          8
+Obituaries      F          6
+Doctor Is In    F          6
+
+
+//Conditional Select with WHERE Clause
+
+SQL> select Feature, Section, Page from NEWSPAPER
+  2  where Section = 'F'
+  3  order by Feature;
+
+FEATURE         S       PAGE
+--------------- - ----------
+Births          F          7
+Classified      F          8
+Doctor Is In    F          6
+Obituaries      F          6
+
+//Conditional Select with WHERE Clause
+
+SQL> select Feature, Section, Page from NEWSPAPER
+  2  where Section = 'F'
+  3  order by Page;
+
+FEATURE         S       PAGE
+--------------- - ----------
+Doctor Is In    F          6
+Obituaries      F          6
+Births          F          7
+Classified      F          8
+
+//Conditional Select with WHERE Clause
+
+SQL> select Feature, Section, Page from NEWSPAPER
+  2  where Section = 'F'
+  3  order by Page desc, Feature;
+
+FEATURE         S       PAGE
+--------------- - ----------
+Classified      F          8
+Births          F          7
+Doctor Is In    F          6
+Obituaries      F          6
+
+//Conditional Select with WHERE Clause
+
+SQL> select Feature, Section, Page
+  2  from NEWSPAPER
+  3  where Page = 6;
+
+FEATURE         S       PAGE
+--------------- - ----------
+Obituaries      F          6
+Doctor Is In    F          6
+SQL> select Feature, Section, Page
+  2  from NEWSPAPER
+  3  where Section = 'B';
+
+FEATURE         S       PAGE
+--------------- - ----------
+Television      B          7
+Modern Life     B          1
+Movies          B          4
+Bridge          B          2
+SQL> select Feature, Section, Page
+  2  from NEWSPAPER
+  3  where Page > 4;
+
+FEATURE         S       PAGE
+--------------- - ----------
+Editorials      A         12
+Television      B          7
+Births          F          7
+Classified      F          8
+Obituaries      F          6
+Doctor Is In    F          6
+
+//Conditional Select with WHERE Clause
+
+SQL> select Feature, Section, Page
+  2  from NEWSPAPER
+  3  where Page <> 1;
+
+FEATURE         S       PAGE
+--------------- - ----------
+Editorials      A         12
+Weather         C          2
+Television      B          7
+Births          F          7
+Classified      F          8
+Comics          C          4
+Movies          B          4
+Bridge          B          2
+Obituaries      F          6
+Doctor Is In    F          6
+
+
+//Conditional Select with WHERE Clause
+
+SQL> select Feature, Section, Page
+  2  from NEWSPAPER
+  3  where Section = 'B';
+
+FEATURE         S       PAGE
+--------------- - ----------
+Television      B          7
+Modern Life     B          1
+Movies          B          4
+Bridge          B          2
+
+
+//Conditional Select with WHERE Clause
+
+SQL> select Feature, Section, Page
+  2  from NEWSPAPER
+  3  where Page > 4;
+
+FEATURE         S       PAGE
+--------------- - ----------
+Editorials      A         12
+Television      B          7
+Births          F          7
+Classified      F          8
+Obituaries      F          6
+Doctor Is In    F          6
+
+
+//Conditional Select with WHERE Clause
+
+SQL> select Feature, Section, Page
+  2  from NEWSPAPER
+  3  where Section > 'B';
+
+FEATURE         S       PAGE
+--------------- - ----------
+Sports          D          1
+Business        E          1
+Weather         C          2
+Births          F          7
+Classified      F          8
+Comics          C          4
+Obituaries      F          6
+Doctor Is In    F          6
+
+
+//Conditional Select with WHERE Clause
+
+SQL> select Feature, Section, Page
+  2  from NEWSPAPER
+  3  where Page < 8;
+
+FEATURE         S       PAGE
+--------------- - ----------
+National News   A          1
+Sports          D          1
+Business        E          1
+Weather         C          2
+Television      B          7
+Births          F          7
+Modern Life     B          1
+Comics          C          4
+Movies          B          4
+Bridge          B          2
+Obituaries      F          6
+
+FEATURE         S       PAGE
+--------------- - ----------
+Doctor Is In    F          6
+
+
+//only show MO which stays in Feature word
+
+
+SQL> select Feature, Section, Page from NEWSPAPER
+  2  where Feature LIKE 'Mo%';
+
+FEATURE         S       PAGE
+--------------- - ----------
+Modern Life     B          1
+Movies          B          4
+
+
+//print 2 i  into the feature word
+
+SQL> select Feature, Section, Page from NEWSPAPER
+  2  where Feature LIKE '%i%i%';
+
+FEATURE         S       PAGE
+--------------- - ----------
+Editorials      A         12
+Television      B          7
+Classified      F          8
+Obituaries      F          6
