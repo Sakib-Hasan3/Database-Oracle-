@@ -1,0 +1,5 @@
+//save changes in database Query
+
+SQL> commit;
+
+Commit complete.

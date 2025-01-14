@@ -1,0 +1,31 @@
+//some operations in oracle database 
+
+
+SQL> set feedback off;
+SQL> set feedback 25 ;
+SQL> show numwidth;
+SQL> show feedback;
+SQL> set numwidth 25;
+
+
+SQL> select *from newspaper;
+
+FEATURE         S       PAGE
+--------------- - ----------
+National News   A          1
+Sports          D          1
+Editorials      A         12
+Business        E          1
+Weather         C          2
+Television      B          7
+Births          F          7
+Classified      F          8
+Modern Life     B          1
+Comics          C          4
+Movies          B          4
+
+FEATURE         S       PAGE
+--------------- - ----------
+Bridge          B          2
+Obituaries      F          6
+Doctor Is In    F          6

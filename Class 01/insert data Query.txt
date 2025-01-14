@@ -1,0 +1,58 @@
+//insert data Query
+
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('National News', 'A', 1); 
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Sports', 'D', 1);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Editorials', 'A', 12);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Business', 'E', 1);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Weather', 'C', 2);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Television', 'B', 7);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Births', 'F', 7);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Classified', 'F', 8);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Modern Life', 'B', 1);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Comics', 'C', 4);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Movies', 'B', 4);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Bridge', 'B', 2);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Obituaries', 'F', 6);
+
+1 row created.
+
+SQL> INSERT INTO NEWSPAPER (FEATURE, SECTION, PAGE) VALUES ('Doctor Is In', 'F', 6);
+
+1 row created.
