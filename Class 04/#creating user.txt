@@ -1,20 +1,17 @@
-#creating user
+#password management
 
+SQL> password  #to change password of the user
+Changing password for DORA3
+Old password:
+New password:
+Retype new password:
+>Password changed
 
-SQL> CREATE USER Dora3 IDENTIFIED BY apache; #create user USERNAME identified by PASSWORD
-
-User created.
-
-SQL> show user #to show user
-USER is "" 
-
-SQL> CONNECT sys/password AS SYSDBA;  #to connect in user
+SQL> CONNECT sys/password AS SYSDBA; #connected into user
 Connected.
 
-SQL> GRANT CREATE SESSION TO Dora3; # to give user to create session privilidge
+SQL> ALTER USER Dora3 IDENTIFIED BY sakib123; #change password
+User altered.
 
-Grant succeeded.
-
-
-SQL> CONNECT Dora3/apache; #to connect in database
+SQL> CONNECT Dora3/sakib123; #connected
 Connected.
