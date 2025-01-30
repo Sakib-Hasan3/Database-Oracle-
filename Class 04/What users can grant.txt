@@ -1,0 +1,66 @@
+# What Users Can Grant
+
+SQL> DROP USER Judy CASCADE;  #delete user
+
+User dropped.
+
+SQL> create user Judy identified by sarah; #create user 
+
+User created.
+
+SQL> grant CREATE SESSION to Judy; #give permission
+
+Grant succeeded.
+
+SQL> CONNECT Bob/carolyn;  #connect with user
+Connected.
+
+SQL> CREATE TABLE employees (    #create table into the Bob user 
+  2      emp_id NUMBER PRIMARY KEY,
+  3      first_name VARCHAR2(50),
+  4      last_name VARCHAR2(50),
+  5      salary NUMBER(10,2),
+  6      hire_date DATE DEFAULT SYSDATE
+  7  );
+
+Table created.
+
+SQL> DESC employees;  #verify the table
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMP_ID                                    NOT NULL NUMBER
+ FIRST_NAME                                         VARCHAR2(50)
+ LAST_NAME                                          VARCHAR2(50)
+ SALARY                                             NUMBER(10,2)
+ HIRE_DATE                                          DATE
+
+
+SQL> INSERT INTO employees (emp_id, first_name, last_name, salary)  #insert into the table
+  2  VALUES (1, 'Alice', 'Smith', 50000);
+
+1 row created.
+
+SQL> INSERT INTO employees (emp_id, first_name, last_name, salary)  #insert into the table
+     2  VALUES (2, 'John', 'Doe', 60000);
+
+1 row created.
+
+SQL> COMMIT;  #save value into the table 
+
+Commit complete.
+
+
+SQL> SELECT * FROM employees;  #see the table value 
+
+    EMP_ID FIRST_NAME
+---------- --------------------------------------------------
+LAST_NAME                                              SALARY HIRE_DATE
+-------------------------------------------------- ---------- ---------
+         1 Alice
+Smith                                                   50000 30-JAN-25
+
+         2 John
+Doe                                                     60000 30-JAN-25
+
+
