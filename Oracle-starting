@@ -1,0 +1,18 @@
+// Using SQL to Select Data from Tables
+
+
+//select feature
+
+SQL> select Feature, Section, Page from NEWSPAPER;
+
+no rows selected
+
+
+//describe newspaper
+
+SQL> describe NEWSPAPER
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ FEATURE                                   NOT NULL VARCHAR2(15)
+ SECTION                                            CHAR(1)
+ PAGE                                               NUMBER
